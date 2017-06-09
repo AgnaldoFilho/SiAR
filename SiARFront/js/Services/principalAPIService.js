@@ -1,4 +1,4 @@
-angular.module("SiARBack").factory("principalAPI", function($http, config){
+angular.module("SiAR").factory("principalAPI", function($http, config){
 	var _getFuncionariosDoDia = function () {
 		return $http.get(config.baseUrl + "/funcionario/?");
     };

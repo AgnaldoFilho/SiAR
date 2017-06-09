@@ -1,3 +1,3 @@
-angular.module("SiARBack").value("config", {
+angular.module("SiAR").value("config", {
 	baseUrl: "http://localhost/SiARBack"
 });

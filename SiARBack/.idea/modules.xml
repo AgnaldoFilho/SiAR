@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://C:\Users\Agnaldo Filho\Desktop\CiC CEUB\SEM 7\Estágio Supervisionado\SiAR\ProjectSeries\.idea\ProjectSeries.iml" filepath="C:\Users\Agnaldo Filho\Desktop\CiC CEUB\SEM 7\Estágio Supervisionado\SiAR\ProjectSeries\.idea\ProjectSeries.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SiARBack.iml" filepath="$PROJECT_DIR$/.idea/SiARBack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SiARFront/.idea/SiARFront.iml" filepath="$PROJECT_DIR$/../SiARFront/.idea/SiARFront.iml" />
     </modules>
   </component>
 </project>

@@ -1,1 +1,1 @@
-angular.module('SiARBack', ["ngRoute"]);
+angular.module('SiAR', ["ngRoute"]);

@@ -1,6 +1,6 @@
-<script src="lib/angular.min.js"></script>
-<script src="js/CadastrarFuncionarioCtrl.js"></script>
-<script src="lib/jquery.min.js"></script>
+<!--<script src="lib/angular.min.js"></script>-->
+<!--<script src="js/CadastrarFuncionarioCtrl.js"></script>-->
+<!--<script src="lib/jquery.min.js"></script>-->
 <style>
     .jumbotron{
         margin-top:2%;
@@ -53,19 +53,30 @@
         <input type="text" name="end_estado_funcionario" ng-model="funcionario.end_estado_funcionario" class="form-control" placeholder="Estado" required id="linha2"/>
         <input type="text" name="end_cidade_funcionario" ng-model="funcionario.end_cidade_funcionario" class="form-control" placeholder="Cidade" required id="linha2"/>
         <br><br>
-        <input type="date" name="dta_nasc_funcionario" ng-model="funcionario.dta_nasc_funcionario" class="form-control" placeholder="Data de Nascimento" required id="linha2"/>
+        <input type="text" name="dta_nasc_funcionario" ng-model="funcionario.dta_nasc_funcionario" class="form-control" placeholder="AAAA-MM-DD"  required id="linha2"/><!--pattern="\d{4}\-\d{2}\-\d{2}"-->
         <input type="text" name="cel_funcionario" ng-model="funcionario.cel_funcionario" class="form-control" placeholder="Celular" required id="linha2"/>
         <input type="text" name="end_bairro_funcionario" ng-model="funcionario.end_bairro_funcionario" class="form-control" placeholder="Bairro" required id="linha2"/>
         <input type="text" name="end_nr_funcionario" ng-model="funcionario.end_nr_funcionario" class="form-control" placeholder="Número do Endereço" required id="linha2"/>
         <br><br>
         <input type="text" name="tel_funcionario" ng-model="funcionario.tel_funcionario" class="form-control" placeholder="Telefone" required id="linha2"/>
         <input type="text" name="sex_funcionario" ng-model="funcionario.sex_funcionario" class="form-control" placeholder="Sexo" required id="linha2"/>
+        <!--<select class="form-control" ng-model="funcionario.cpf_funcionario" ng-options="sex.cpf_funcionario as sex.sex_funcionario for sex in sexoF" required id="linha2">
+            <option value="">Sexo</option>
+        </select>-->
         <input type="text" name="cep_funcionario" ng-model="funcionario.cep_funcionario" class="form-control" placeholder="CEP" required id="linha2"/>
-        <input type="text" name="cod_estado_civil" ng-model="funcionario.cod_estado_civil" class="form-control" placeholder="Estado Civil" required id="linha2"/>
+        <select class="form-control" ng-model="funcionario.cod_estado_civil" ng-options="estciv.idt_estado_civil as estciv.dsc_estado_civil for estciv in estadocivil" required id="linha2">
+        <option value="">Estado Civil</option>
+        </select>
         <br><br>
-        <input type="pass" name="pwd_funcionario" ng-model="funcionario.pwd_funcionario" class="form-control" placeholder="Senha" required id="linha3"/>
-        <input type="option" name="cod_funcao" ng-model="funcionario.cod_funcao" class="form-control" placeholder="Função" required id="linha3"/>
-        <input type="text" name="cod_restaurante" ng-model="funcionario.cod_restaurante" class="form-control" placeholder="Restaurante" required id="linha3"/>
+        <input type="password" name="pwd_funcionario" ng-model="funcionario.pwd_funcionario" class="form-control" placeholder="Senha" required id="linha3"/>
+        <!--<input type="option" name="cod_funcao" ng-model="funcionario.cod_funcao" class="form-control" placeholder="Função" required id="linha3"/>
+        <input type="text" name="cod_restaurante" ng-model="funcionario.cod_restaurante" class="form-control" placeholder="Restaurante" required id="linha3"/>-->
+        <select class="form-control" ng-model="funcionario.cod_funcao" ng-options="func.idt_funcao as func.dsc_funcao for func in funcionarioFuncao" required id="linha2">
+            <option value="">Função</option>
+        </select>
+        <select class="form-control" ng-model="funcionario.cod_restaurante" ng-options="rest.cnpj_restaurante as rest.nme_restaurante for rest in restauranteF" required id="linha2">
+            <option value="">Restaurante</option>
+        </select>
         <br><br><br>
         <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)" type="submit" id="button" >Registrar</button>
     </form>

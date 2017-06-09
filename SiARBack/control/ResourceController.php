@@ -8,6 +8,7 @@ include_once "control/FuncaoController.php";
 include_once "control/TurnosFuncionarioController.php";
 include_once "control/PontoEletronicoController.php";
 include_once "control/DiaController.php";
+include_once "control/TurnoController.php";
 include_once "control/EstadoCivilController.php";
 include_once "control/RestauranteController.php";
 

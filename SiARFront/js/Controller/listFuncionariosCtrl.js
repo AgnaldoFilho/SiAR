@@ -1,4 +1,4 @@
-angular.module("SiARBack").controller("listFuncionariosCtrl", function ($scope, $http, listFuncionariosAPI)
+angular.module("SiAR").controller("listFuncionariosCtrl", function ($scope, $http, listFuncionariosAPI)
 {
 
     var carregarListFuncionarios = function() {

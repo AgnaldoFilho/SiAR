@@ -1,4 +1,4 @@
-angular.module("SiARBack").factory ("funcionarioAPI",function($http, config){
+angular.module("SiAR").factory ("funcionarioAPI",function($http, config){
 
     var _postFuncionario = function(funcionario){
         return $http.post(config.baseUrl + "/funcionario/?cpf_funcionario=" + funcionario.cpf_funcionario + "&nme_funcionario="
@@ -28,13 +28,61 @@ angular.module("SiARBack").factory ("funcionarioAPI",function($http, config){
         return $http.get(config.baseUrl + "/funcionario/?cpf_funcionario=" + cpf_funcionario);
     };
 
+    var _getFuncionarios = function () {
+        return $http.get(config.baseUrl + "/funcionario/?");
+    };
+
 	var _deleteCadastro = function (cpf_funcionario) {
 		return $http.delete(config.baseUrl + "/funcionario/?cpf_funcionario=" + cpf_funcionario);
 	};
+
+	var _getEstadoCivil = function () {
+        return $http.get(config.baseUrl + "/estado_civil/?");
+    };
+  
+    var _getFuncao = function () {
+        return $http.get(config.baseUrl + "/funcao/?");
+    };
+
+	var _getRestaurante = function () {
+        return $http.get(config.baseUrl + "/restaurante/?");
+    };
+
+    var _getDias = function () {
+        return $http.get(config.baseUrl + "/dia/?");
+    };
+
+    var _getTurnos = function () {
+        return $http.get(config.baseUrl + "/turno/?");
+    };
+
+    // var _getTurnosFuncionario = function (cod_funcionario) {
+    //     return $http.get(config.baseUrl + "/turnos_funcionario/?cod_funcionario=" + cod_funcionario);
+    // }
+
+    var _postTurnosFuncionario = function (turnos_funcionario) {
+        return $http.post(config.baseUrl + "/turnos_funcionario/?idt_turnos_funcionario=1&cod_funcionario=" +
+            turnos_funcionario.cod_funcionario + "&cod_turno=" + turnos_funcionario.cod_turno + "&cod_dia=" +
+            turnos_funcionario.cod_dia);
+    };
+
+    var _login = function(funcionario){
+        return $http.get(config.baseUrl + "/funcionario/?cpf_funcionario=" + funcionario.cpf_funcionario +
+                                                               "&cod_funcao=1&pwd_funcionario=" + funcionario.pwd_funcionario);
+    };
 	return {
         getFuncionario: _getFuncionario,
+        getFuncionarios: _getFuncionarios,
         postFuncionario: _postFuncionario,
         putFuncionario: _putFuncionario,
-        deleteCadastro: _deleteCadastro
+        deleteCadastro: _deleteCadastro,
+        getEstadoCivil: _getEstadoCivil,
+        getFuncao: _getFuncao,
+        getRestaurante: _getRestaurante,
+        getDias: _getDias,
+        getTurnos: _getTurnos,
+    //    getTurnosFuncionario: _getTurnosFuncionario,
+        postTurnosFuncionario: _postTurnosFuncionario,
+        login: _login
 	};
 });

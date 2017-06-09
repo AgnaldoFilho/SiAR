@@ -1,0 +1,116 @@
+<style src="css/stylesiar.css"></style>
+<style>
+    .selecionado{
+        background-color: #bbbfce;
+    }
+</style>
+
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-8 text-left">
+            <div class="jumbotron">
+                <center><h2>Adicione os turnos de seu funcionário:</h2></center>
+                    <hr>
+                <form name="turnosFuncionarioForm" ng-submit="carregarTurnosFuncionario(turnos_funcionario.cod_funcionario)">
+                <select class="form-control" ng-model="turnos_funcionario.cod_funcionario"
+                 ng-options="func.cpf_funcionario as func.nme_funcionario for func in funcionario"  required>
+                    <!--ng-submit="carregarTurnosFuncionario(cod_funcionario)"-->
+                    <option value="">Funcionário</option>
+                </select>
+                <br>
+                <div class="row">
+                   <div class="col-md-12">
+                       <table class="table table-striped">
+                           <thead>
+                           <tr>
+                               <td>Funcionario</td>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <div>
+                           <tr>
+                               {{cadastroTurnosFuncionario}}
+                           </tr>
+                           </div>
+                           </tbody>
+                       </table>
+                   </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" ng-model="turnos_funcionario.cod_dia"
+                                ng-options="day.idt_dia as day.dsc_dia for day in dias" required>
+                            <option value="">Dia</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" ng-model="turnos_funcionario.cod_turno"
+                                ng-options="turn.idt_turno as turn.dsc_turno for turn in turno" required>
+                            <option value="">Turno</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block"
+                                ng-model="adicionar" ng-click="AdicionarTurno(turnos_funcionario)"
+                                ng-disabled="!(turnos_funcionario.cod_funcionario && turnos_funcionario.cod_dia && turnos_funcionario.cod_turno)"
+                                type="submit" >Salvar</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--<table ng-if="turn.checkbox.value" class="table">-->
+<!--<th>Turnos</th>-->
+<!--&lt;!&ndash;<th>Select All: <input type="checkbox" ng-model=allEp ng-click="checkAll(temp)" /></th>&ndash;&gt;-->
+<!--<tr ng-class="{selecionado: turn.checkbox.value}" ng-repeat="turn in turno">-->
+<!--<td><input type="checkbox" ng-model="ep.checkbox.value"/></td>-->
+<!--<td>{{turn.dsc_turno}}</td>-->
+<!--</tr>-->
+<!--</table>-->
+
+<!--<table class="table">-->
+<!--<tr>-->
+<!--<th>Dias</th>-->
+<!--<tr ng-class="{selecionado: turnos_funcionario.cod_dia}">-->
+<!--<td><input type="checkbox" ng-model="turnos_funcionario.cod_dia"-->
+<!--ng-options="day.idt_dia as day.dsc_dia for day in dias" /></td>-->
+<!--<td>Dia: {{day.dsc_dia}}-->
+<!--<td>-->
+<!--<table ng-if="turnos_funcionario.cod_dia" class="table">-->
+<!--<th>Turnos</th>-->
+<!--&lt;!&ndash;<th>Select All: <input type="checkbox" ng-model=allEp ng-click="checkAll(temp)" /></th>&ndash;&gt;-->
+<!--<tr ng-class="{selecionado: turn.checkbox.value}" ng-repeat="turn in turno">-->
+<!--<td><input type="checkbox" ng-model="turn.checkbox.value"/></td>-->
+<!--<td>{{turn.dsc_turno}}</td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--</td>-->
+<!--</td>-->
+
+<!--</tr>-->
+<!--</tr>-->
+<!--<button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)" type="submit" id="button" >Registrar</button>-->
+<!--</table>-->
+<!--<tr ng-class="{selecionado: day.checkbox.value}" ng-repeat="day in dias">-->
+<!--<td><input type="checkbox" ng-false-value="day.idt_dia" ng-true-value="day.idt_dia" ng-model="turnos_funcionario.cod_dia"/></td>-->
+<!--<td>Dia: {{day.dsc_dia}} {{turnos_funcionario.cod_dia}}-->
+<!--<td>-->
+<!--<table ng-if="day.checkbox.value" class="table">-->
+<!--<th>Turnos</th>-->
+<!--&lt;!&ndash;<th>Select All: <input type="checkbox" ng-model=allEp ng-click="checkAll(temp)" /></th>&ndash;&gt;-->
+<!--<tr ng-class="{selecionado: turn.checkbox.value}" ng-repeat="turn in turno">-->
+<!--<td><input type="checkbox" ng-model="turn.checkbox.value"/></td>-->
+<!--<td>{{turn.dsc_turno}}</td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--</td>-->
+<!--</td>-->

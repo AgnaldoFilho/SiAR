@@ -1,9 +1,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/listFuncionariosCtrl.js"></script>
-<script src="lib/angular.min.js"></script>
-<script src="lib/jquery.min.js"></script>
+<!--<script src="js/listFuncionariosCtrl.js"></script>-->
+<!--<script src="lib/angular.min.js"></script>-->
+<!--<script src="lib/jquery.min.js"></script>-->
 <style>
 	.jumbotron{
 		width: 800px;
@@ -35,11 +35,10 @@
         </form>
       </div>
     </div>
-          <div class="list-group" ng-controller="listFuncionariosCtrl">
+          <div class="list-group">
               <div ng-repeat="listfunc in listFuncionarios | filter:test">
                   <a href="#/funcionario/{{listfunc.cpf_funcionario}}" class="list-group-item">{{listfunc.nme_funcionario}}</a>
               </div>
           </div>
  </div>
 </div>
-<div ng-include="'view/components/footer.html'"></div>

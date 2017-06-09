@@ -1,5 +1,10 @@
-
-
+<style>
+  .porraqui{
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+  }
+</style>
+<script src="js/Controller/funcionarioCtrl.js"></script>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -17,9 +22,16 @@
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown"> Funcionários <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#/pontoEletronico">Ponto Eletrônico</a></li>
             <li><a href="#/listFuncionarios">Lista Geral de Funcionários</a></li>
             <li><a href="index.html#/CadastrarFuncionario">Cadastrar Funcionário</a></li>
+            <li><a href="index.html#/CadastrarTurnoFuncionario">Cadastrar Turnos para Funcionário</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"> Ponto Eletrônico <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/pontosBatidos">Pontos Batidos</a></li>
+            <li><a href="#">Bater Ponto Manual</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -42,8 +54,8 @@
           </div>
         </div>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  Fazer Login</a></li>
+      <ul class="nav navbar-nav navbar-right" ng-controller="funcionarioCtrl" ng-repeat="func in funcionario">
+        <li ><a id="porraqui" href="#"><span class="glyphicon glyphicon-log-in"></span>func.nme_funcionario</a></li>
       </ul>
     </div>
   </div>

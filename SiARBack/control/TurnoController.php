@@ -1,7 +1,7 @@
 <?php
 
-include_once "control/Request.php";
-include_once "control/turno.php";
+include_once "model/Request.php";
+include_once "model/turno.php";
 include_once "database/DBConnector.php";
 
 class TurnoController

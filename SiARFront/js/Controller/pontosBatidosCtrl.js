@@ -1,4 +1,4 @@
-angular.module("SiAR").controller("pontoEletronicoCtrl", function ($scope, $http, ponto_eletronico, pontoEletronicoAPI, $location)
+angular.module("SiAR").controller("pontosBatidosCtrl", function ($scope, $http, ponto_eletronico, pontoEletronicoAPI, $location)
 {
     $scope.ponto_eletronico = ponto_eletronico.data;
     // $scope.carregarPontosBatidos = function() {

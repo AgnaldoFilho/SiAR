@@ -16,7 +16,7 @@ class CategoriaController
 
         $conn = $db->getConnection();
 
-        $result = $conn->query("SELECT dsc_categoria FROM tt_categoria WHERE " . $crit);
+        $result = $conn->query("SELECT * FROM tt_categoria WHERE " . $crit);
 
         return $result->fetchAll(PDO::FETCH_ASSOC);
 

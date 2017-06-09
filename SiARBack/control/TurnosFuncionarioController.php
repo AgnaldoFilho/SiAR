@@ -25,11 +25,10 @@ class TurnosFuncionarioController
 
     private function generateInsertQuery($employee_shift)
     {
-        $query =  "INSERT INTO ta_turnos_funcionario (idt_turnos_funcionario, cod_funcionario, cod_dia, cod_turno) 
-                   VALUES   ('".$employee_shift->getIdtTurnosFuncionario()."','".
-            $employee_shift->getCodFuncionario()."','".
-            $employee_shift->getCodDia()."','".
-            $employee_shift->getCodTurno()."')";
+        $query =  "INSERT INTO ta_turnos_funcionario (cod_funcionario, cod_dia, cod_turno) 
+                   VALUES   ('".$employee_shift->getCodFuncionario()."','".
+                                $employee_shift->getCodDia()."','".
+                                $employee_shift->getCodTurno()."')";
 
         return $query;
     }
@@ -43,7 +42,11 @@ class TurnosFuncionarioController
 
         $conn = $db->getConnection();
 
-        $result = $conn->query("SELECT * FROM ta_turnos_funcionario WHERE 1=1 AND ".$crit);
+        $result = $conn->query("SELECT func.nme_funcionario, d.dsc_dia, t.dsc_turno 
+                                          FROM ta_turnos_funcionario tf, tb_funcionario func, tt_dia d, tt_turno t 
+                                          WHERE tf.cod_funcionario = func.cpf_funcionario 
+                                          AND tf.cod_dia = d.idt_dia
+                                          AND tf.cod_turno = t.idt_turno AND ".$crit);
 
         return $result->fetchAll(PDO::FETCH_ASSOC);
 

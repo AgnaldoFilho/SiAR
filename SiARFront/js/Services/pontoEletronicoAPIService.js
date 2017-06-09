@@ -1,4 +1,4 @@
-angular.module("SiARBack").factory ("pontoEletronicoAPI",function($http, config){
+angular.module("SiAR").factory ("pontoEletronicoAPI",function($http, config){
 
     var _postPontoManual = function(ponto_eletronico){
         return $http.post(config.baseUrl + "/ponto_eletronico/?idt_ponto_eletronico=1&cod_funcionario="

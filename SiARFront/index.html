@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="SiARBack">
+<html lang="en" ng-app="SiAR">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,14 +19,17 @@
     <script src="js/app.js"></script>
     <script src="lib/angular-route.min.js"></script>
     <script src="js/Config/routeConfig.js"></script>
+    <script src="js/Controller/loginCtrl.js"></script>
     <script src="js/Controller/principalCtrl.js"></script>
     <script src="js/Controller/listFuncionariosCtrl.js"></script>
+    <script src="js/Controller/CadastrarTurnoFuncionarioCtrl.js"></script>
     <script src="js/Controller/CadastrarFuncionarioCtrl.js"></script>
     <script src="js/Controller/CadastrarCardapioCtrl.js"></script>
     <script src="js/Controller/atualizarFuncionarioCtrl.js"></script>
     <script src="js/Controller/funcionarioCtrl.js"></script>
+    <script src="js/Controller/TurnosFuncionarioCtrl.js"></script>
     <script src="js/Controller/cardapioCtrl.js"></script>
-    <script src="js/Controller/pontoEletronicoCtrl.js"></script>
+    <script src="js/Controller/pontosBatidosCtrl.js"></script>
     <script src="js/Services/funcionarioAPIService.js"></script>
     <script src="js/Services/cardapioAPIService.js"></script>
     <script src="js/Services/pontoEletronicoAPIService.js"></script>
@@ -68,6 +71,8 @@
     <div ng-include="'view/components/navbar.html'"></div>
 
     <div ng-view></div>
+
+    <div  ng-include="'view/components/footer.html'"></div>
 
 </body>
 </html>

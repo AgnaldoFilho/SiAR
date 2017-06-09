@@ -1,0 +1,20 @@
+<style>
+    .jumbotron{
+        width: 800px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<div class="jumbotron">
+    <form name="loginForm" class="form-signin">
+        <h2 class="form-signin-heading">Sign In:</h2>
+
+        <input type="text" name="cpf_funcionario" ng-model="funcionario.cpf_funcionario" class="form-control" placeholder="CPF" required/>
+        <br>
+        <input type="password" name="pwd_funcionario" ng-model="funcionario.pwd_funcionario" class="form-control" placeholder="Senha" required/>
+        <br>
+
+    </form>
+    <button class="btn btn-lg btn-primary btn-block" ng-model="logar" ng-click="Logar(funcionario)" type="submit">Let me in!</button>
+</div>

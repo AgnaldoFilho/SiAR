@@ -1,4 +1,4 @@
-angular.module("SiARBack").controller("cardapioCtrl", function ($scope, $http, cardapio, cardapioAPI, $location)
+angular.module("SiAR").controller("cardapioCtrl", function ($scope, $http, cardapio, cardapioAPI, $location)
 {
     $scope.cardapio = cardapio.data;
 

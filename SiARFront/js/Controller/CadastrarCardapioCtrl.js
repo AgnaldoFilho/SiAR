@@ -1,4 +1,4 @@
-angular.module("SiARBack").controller("CadastrarCardapioCtrl", function ($scope, $http, cardapioAPI, $location)
+angular.module("SiAR").controller("CadastrarCardapioCtrl", function ($scope, $http, cardapioAPI, $location)
 {
     $scope.cardapio = {};
 
@@ -11,5 +11,9 @@ angular.module("SiARBack").controller("CadastrarCardapioCtrl", function ($scope,
             $scope.cardapioForm.$setPristine();
         });
     };
+
+    cardapioAPI.getCategorias().success(function (data) {
+        $scope.categoria = data;
+    })
 
 });
