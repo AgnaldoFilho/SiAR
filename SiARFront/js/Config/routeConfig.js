@@ -96,6 +96,17 @@ angular.module("SiAR").config(function($routeProvider){
         controller: "CadastrarCardapioCtrl"
     });
 
+    $routeProvider.when("/atualizarCardapio/:idt_cardapio",{
+        templateUrl: "view/atualizarCardapio.html",
+        controller: "atualizarCardapioCtrl",
+        resolve:{
+            cardapio: function(cardapioAPI, $route){
+                return cardapioAPI.getItemDoCardapio($route.current.params.idt_cardapio);
+            }
+        }
+
+    });
+
     $routeProvider.when("/cardapio",{
         templateUrl: "view/cardapio.html",
         controller: "cardapioCtrl",

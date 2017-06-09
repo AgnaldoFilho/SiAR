@@ -1,0 +1,60 @@
+<!--<script src="lib/angular.min.js"></script>-->
+<!--<script src="js/cardapioCtrl.js"></script>-->
+<!--<script src="lib/jquery.min.js"></script>-->
+<style>
+    .jumbotron{
+        margin-top:2%;
+        width: 95%;
+        background-color:#ffbd0f;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #linha1{
+        width:38%;
+        float:left;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    #linha2{
+        width:18%;
+        float:left;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    #linha3{
+        width:18%;
+        float:left;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    #img{
+        width: 10%;
+        float:left;
+        height: 195px ;
+        margin-left:5.5%;
+    }
+    #button{
+        width: 25%;
+        margin-left: 69.5%;
+
+    }
+</style>
+<div class="jumbotron">
+    <form name="cardapioForm" class="form-signin">
+        <h2 class="form-signin-heading">Cadastrar Item no Cardápio:</h2>
+        <br><br>
+        <input type="file" name="img_cardapio" ng-model="cardapio.img_cardapio" class="form-control" placeholder="Foto" required id="img"/>
+        <input type="text" name="itm_cardapio" ng-model="cardapio.itm_cardapio" class="form-control" placeholder="Nome do Item no Cardápio" required id="linha1" />
+        <select class="form-control" ng-model="cardapio.cod_categoria" ng-options="cat.idt_categoria as cat.dsc_categoria for cat in categoria" required id="linha2">
+            <option value="">Categorias</option>
+        </select>
+        <br><br>
+        <input type="text" name="vlr_itm_cardapio" ng-model="cardapio.vlr_itm_cardapio" class="form-control" placeholder="Preço" required id="linha2"/>
+        <input type="text" name="cod_restaurante" ng-model="cardapio.cod_restaurante" class="form-control" placeholder="Restaurante" required id="linha2"/>
+        <input type="text" name="dsc_itm_cardapio" ng-model="cardapio.dsc_itm_cardapio" class="form-control" placeholder="Descrição do Item" required id="linha2"/>
+        <br><br><br>
+        <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarMenu ng-click="updateCardapio(cardapio)" type="submit" id="button" >Registrar</button>
+    </form>
+
+</div>

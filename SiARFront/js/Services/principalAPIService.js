@@ -1,6 +1,6 @@
 angular.module("SiAR").factory("principalAPI", function($http, config){
 
-	var _getFuncionariosDoDia = function (today) {
+  var _getFuncionariosDoDia = function (today) {
 		return $http.get(config.baseUrl + "/ponto_eletronico/?ponto_hr_entrada=" + today);
     };
 
