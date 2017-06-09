@@ -1,0 +1,45 @@
+<!--<script src="lib/angular.min.js"></script>-->
+<!--<script src="js/CadastrarFuncionarioCtrl.js"></script>-->
+<!--<script src="lib/jquery.min.js"></script>-->
+<style>
+    .jumbotron{
+        margin-top:2%;
+        width: 95%;
+        background-color:#ffbd0f;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #linha1{
+        width:38%;
+        float:left;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    #linha2{
+        width:18%;
+        float:left;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    #button{
+        width: 25%;
+        margin-left: 69.5%;
+    }
+</style>
+<div class="jumbotron">
+    <form name="pontoManualForm" class="form-signin">
+        <h2 class="form-signin-heading">Bater Ponto Manual:</h2>
+        <br>
+        <select class="form-control" ng-model="ponto_eletronico.cod_funcionario" ng-options="func.cpf_funcionario as func.nme_funcionario for func in funcionario" required id="linha2">
+            <option value="">Funcionário</option>
+        </select>
+        <br><br><br>
+        <input type="datetime-local" name="ponto_hr_entrada" ng-model="ponto_eletronico.ponto_hr_entrada" class="form-control" placeholder="Horário e Data de Entrada" required id="linha1"/>
+        <input type="datetime-local" name="ponto_hr_saida" ng-model="ponto_eletronico.ponto_hr_saida" class="form-control" placeholder="Horário e Data de Saida" required id="linha1"/>
+        <br><br><br>
+        <button class="btn btn-lg btn-primary btn-block"
+                ng-model=adicionarP ng-click="adicionarPonto(ponto_eletronico)"
+                ng-disabled="!(ponto_eletronico.cod_funcionario && ponto_eletronico.ponto_hr_entrada && ponto_eletronico.ponto_hr_saida)" type="submit" id="button">Salvar</button>
+    </form>
+</div>

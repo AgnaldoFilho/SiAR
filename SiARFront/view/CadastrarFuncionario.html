@@ -78,7 +78,25 @@
             <option value="">Restaurante</option>
         </select>
         <br><br><br>
-        <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)" type="submit" id="button" >Registrar</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)"
+                ng-disabled = "!(funcionario.nme_funcionario &&
+                                 funcionario.end_funcionario &&
+                                 funcionario.cpf_funcionario &&
+                                 funcionario.rg_funcionario &&
+                                 funcionario.end_estado_funcionario &&
+                                 funcionario.end_cidade_funcionario &&
+                                 funcionario.dta_nasc_funcionario &&
+                                 funcionario.cel_funcionario &&
+                                 funcionario.end_bairro_funcionario &&
+                                 funcionario.end_nr_funcionario &&
+                                 funcionario.tel_funcionario &&
+                                 funcionario.sex_funcionario &&
+                                 funcionario.cep_funcionario &&
+                                 funcionario.cod_estado_civil &&
+                                 funcionario.pwd_funcionario &&
+                                 funcionario.cod_funcao &&
+                                 funcionario.cod_restaurante)"
+                type="submit" id="button" >Registrar</button>
     </form>
 
 </div>

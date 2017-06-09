@@ -1,9 +1,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<script src="lib/angular.min.js"></script>-->
-    <!--<script src="js/principalCtrl.js"></script>-->
-    <!--<script src="lib/jquery.min.js"></script>-->
     <style>
         .jumbotron{
             width: 800px;
@@ -31,8 +28,9 @@
         </div>
 
             <table class="jumbotron">
-                <tr class="center" ng-controller="principalCtrl" ng-repeat="employee in funcionario | filter:test">
-                  <td><img ng-src="data:image/JPEG;base64,{{employee.img_funcionario}}"></td>
-                    <td><h3>{{employee.nme_funcionario}}</h3></td>
-                    <td><a class="btn btn-primary" href="#/funcionario/{{employee.cpf_funcionario}}">Ver Perfil</a></td>  </tr>
+                <tr class="center" ng-repeat="main in principal | filter:test">
+                  <!--<td><img ng-src="data:image/JPEG;base64,{{employee.img_funcionario}}"></td>-->
+                    <td><h3>{{main.nme_funcionario}}</h3></td>
+                    <!--<td ng-repeat="employee in funcionario"><a class="btn btn-primary" href="#/funcionario/{{employee.cpf_funcionario}}">Ver Perfil</a></td>-->
+                </tr>
             </table>

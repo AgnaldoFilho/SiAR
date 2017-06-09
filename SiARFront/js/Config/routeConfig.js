@@ -19,12 +19,17 @@ angular.module("SiAR").config(function($routeProvider){
 	});
 	$routeProvider.when("/pontosBatidos",{
         templateUrl: "view/pontosBatidos.html",
-        controller: "pontoEletronicoCtrl",
+        controller: "pontosBatidosCtrl",
         resolve: {
             ponto_eletronico: function (pontoEletronicoAPI) {
                 return pontoEletronicoAPI.getPontosBatidos();
             }
         }
+    });
+
+    $routeProvider.when("/CadastrarPontoEletronicoManual",{
+        templateUrl: "view/CadastrarPontoEletronicoManual.html",
+        controller: "CadastrarPontoEletronicoManualCtrl"
     });
 
     $routeProvider.when("/funcionario/:cpf_funcionario",{
