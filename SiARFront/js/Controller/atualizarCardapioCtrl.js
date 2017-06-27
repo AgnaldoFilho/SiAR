@@ -6,6 +6,10 @@ angular.module("SiAR").controller("atualizarCardapioCtrl", function ($scope, $ht
         $scope.categoria = data;
     });
 
+    cardapioAPI.getRestaurante().success(function (data) {
+        $scope.restauranteCard = data;
+    });
+
     var ToObject = function (cardapio) {
         return {
             idt_cardapio: cardapio[0].idt_cardapio,

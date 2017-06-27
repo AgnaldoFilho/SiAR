@@ -51,7 +51,10 @@
         </select>
         <br><br>
         <input type="text" name="vlr_itm_cardapio" ng-model="cardapio.vlr_itm_cardapio" class="form-control" placeholder="Preço" required id="linha2"/>
-        <input type="text" name="cod_restaurante" ng-model="cardapio.cod_restaurante" class="form-control" placeholder="Restaurante" required id="linha2"/>
+        <!--<input type="text" name="cod_restaurante" ng-model="cardapio.cod_restaurante" class="form-control" placeholder="Restaurante" required id="linha2"/>-->
+        <select class="form-control" ng-model="funcionario.cod_restaurante" ng-options="rest.cnpj_restaurante as rest.nme_restaurante for rest in restauranteCard" required id="linha2">
+            <option value="">Restaurante</option>
+        </select>
         <input type="text" name="dsc_itm_cardapio" ng-model="cardapio.dsc_itm_cardapio" class="form-control" placeholder="Descrição do Item" required id="linha2"/>
         <br><br><br>
         <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarMenu ng-click="updateCardapio(cardapio)" type="submit" id="button" >Atualizar</button>

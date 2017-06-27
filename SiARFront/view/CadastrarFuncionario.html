@@ -5,46 +5,56 @@
     .jumbotron{
         margin-top:2%;
         width: 95%;
-        background-color:#ffbd0f;
+        background-color:#FFFFFF;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+    }
+    .form-signin-heading{
+        font-family: 'Lato', sans-serif;
+        font-size: 38px;
+        margin-top: -10px;
     }
     #linha1{
         width:38%;
         float:left;
         margin-left:1%;
         margin-right:1%;
+        border-radius: 20px;
     }
     #linha2{
         width:18%;
         float:left;
         margin-left:1%;
         margin-right:1%;
+        border-radius: 20px;
     }
     #linha3{
         width:18%;
         float:left;
         margin-left:1%;
         margin-right:1%;
+        border-radius: 20px;
     }
     #img{
-        width: 10%;
+        width: 78%;
         float:left;
-        height: 195px ;
-        margin-left:5.5%;
+        height: 15%;
+        margin-left: 1%;
+        margin-top: -1%;
     }
     #button{
-        width: 25%;
-        margin-left: 69.5%;
-
+        width: 15%;
+        font-size: 15px;
+        margin-left: 1%;
+        margin-top:-1.5%;
+        letter-spacing: 1.5px;
     }
 </style>
 <div class="jumbotron">
     <form name="funcionarioForm" class="form-signin">
-        <h2 class="form-signin-heading">Cadastrar Funcionário:</h2>
-        <br><br>
-        <input type="file" name="img_funcionario" ng-model="funcionario.img_funcionario" class="form-control" placeholder="Foto" required id="img"/>
+        <h2 class="form-signin-heading" align="left">Cadastrar <b>Funcionário:</b></h2>
+        <br>
         <input type="text" name="nme_funcionario" ng-model="funcionario.nme_funcionario" class="form-control" placeholder="Nome" required id="linha1" />
         <input type="text" name="end_funcionario" ng-model="funcionario.end_funcionario" class="form-control" placeholder="Endereço" required id="linha1"/>
         <br><br>
@@ -78,7 +88,9 @@
             <option value="">Restaurante</option>
         </select>
         <br><br><br>
-        <button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)"
+        <input type="file" name="img_funcionario" ng-model="funcionario.img_funcionario" class="form-control" placeholder="Foto" required id="img"/>
+        <br><br><br>
+        <b><button class="btn btn-lg btn-primary btn-block" ng-model=adicionarF ng-click="adicionarFuncionario(funcionario)"
                 ng-disabled = "!(funcionario.nme_funcionario &&
                                  funcionario.end_funcionario &&
                                  funcionario.cpf_funcionario &&
@@ -96,7 +108,7 @@
                                  funcionario.pwd_funcionario &&
                                  funcionario.cod_funcao &&
                                  funcionario.cod_restaurante)"
-                type="submit" id="button" >Registrar</button>
+                   type="submit" id="button" >Registrar</button></b>
     </form>
 
 </div>

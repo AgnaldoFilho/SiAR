@@ -25,6 +25,10 @@ angular.module("SiAR").factory ("cardapioAPI",function($http, config){
         return $http.get(config.baseUrl + "/categoria/?");
     };
 
+    var _getRestaurante = function () {
+        return $http.get(config.baseUrl + "/restaurante/?");
+    };
+
     var _deleteItemCardapio = function (idt_cardapio) {
         return $http.delete(config.baseUrl + "/cardapio/?idt_cardapio=" + idt_cardapio.idt_cardapio);
     };
@@ -36,6 +40,7 @@ angular.module("SiAR").factory ("cardapioAPI",function($http, config){
         getItensDoCardapio: _getItensDoCardapio,
         getItemDoCardapio: _getItemDoCardapio,
         deleteItemCardapio: _deleteItemCardapio,
+        getRestaurante: _getRestaurante,
         getCategorias: _getCategorias
     };
 });
