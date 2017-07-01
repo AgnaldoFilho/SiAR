@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('SiAR', ['ionic', 'SiAR.controllers','SiAR.services','ionic-material'])
 
-.run(function($ionicPlatform, GeoAlert) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,14 +18,6 @@ angular.module('SiAR', ['ionic', 'SiAR.controllers','SiAR.services','ionic-mater
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-      var lat = -15.8178547;
-      var long = -47.8367635;
-
-      GeoAlert.begin(lat,long, function() {
-          console.log('TARGET');
-          alert('você está perto do restaurante e está autorizado a bater ponto');
-          GeoAlert.end();
-      });
   });
 })
 

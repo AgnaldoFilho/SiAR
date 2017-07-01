@@ -60,24 +60,24 @@
         <input type="text" name="nme_funcionario" ng-model="funcionario.nme_funcionario" class="form-control" placeholder="Nome" required id="linha1" />
         <input type="text" name="end_funcionario" ng-model="funcionario.end_funcionario" class="form-control" placeholder="Endereço" required id="linha1"/>
         <br><br>
-        <input type="text" name="cpf_funcionario" ng-model="funcionario.cpf_funcionario" class="form-control" placeholder="CPF" required id="linha2"/>
-        <input type="text" name="rg_funcionario" ng-model="funcionario.rg_funcionario" class="form-control" placeholder="RG" required id="linha2"/>
+        <input type="text" minlength="11" maxlength="11" name="cpf_funcionario" ng-model="funcionario.cpf_funcionario" class="form-control" placeholder="CPF" required id="linha2"/>
+        <input type="text" minlength="11" maxlength="11" name="rg_funcionario" ng-model="funcionario.rg_funcionario" class="form-control" placeholder="RG" required id="linha2"/>
         <input type="text" name="end_estado_funcionario" ng-model="funcionario.end_estado_funcionario" class="form-control" placeholder="Estado" required id="linha2"/>
         <input type="text" name="end_cidade_funcionario" ng-model="funcionario.end_cidade_funcionario" class="form-control" placeholder="Cidade" required id="linha2"/>
         <br><br>
         <input type="date" name="dta_nasc_funcionario" ng-model="funcionario.dta_nasc_funcionario" class="form-control" placeholder="AAAA-MM-DD"  required id="linha2"/><!--pattern="\d{4}\-\d{2}\-\d{2}"-->
-        <input type="text" name="cel_funcionario" ng-model="funcionario.cel_funcionario" class="form-control" placeholder="Celular" required id="linha2"/>
+        <input type="text"minlength="8"maxlength="9" name="cel_funcionario" ng-model="funcionario.cel_funcionario" class="form-control" placeholder="Celular" required id="linha2"/>
         <input type="text" name="end_bairro_funcionario" ng-model="funcionario.end_bairro_funcionario" class="form-control" placeholder="Bairro" required id="linha2"/>
         <input type="text" name="end_nr_funcionario" ng-model="funcionario.end_nr_funcionario" class="form-control" placeholder="Número do Endereço" required id="linha2"/>
         <br><br>
-        <input type="text" name="tel_funcionario" ng-model="funcionario.tel_funcionario" class="form-control" placeholder="Telefone" required id="linha2"/>
+        <input type="text"minlength="8" maxlength="9" name="tel_funcionario" ng-model="funcionario.tel_funcionario" class="form-control" placeholder="Telefone" required id="linha2"/>
         <!--<input type="text" name="sex_funcionario" ng-model="funcionario.sex_funcionario" class="form-control" placeholder="Sexo" required id="linha2"/>-->
         <select class="form-control" ng-model="funcionario.sex_funcionario" required id="linha2">
             <option value="">Sexo</option>
             <option value="0">Feminino</option>
             <option value="1">Masculino</option>
         </select>
-        <input type="text" name="cep_funcionario" ng-model="funcionario.cep_funcionario" class="form-control" placeholder="CEP" required id="linha2"/>
+        <input type="text" minlength="10"maxlength="10" name="cep_funcionario" ng-model="funcionario.cep_funcionario" class="form-control" placeholder="CEP" required id="linha2"/>
         <select class="form-control" ng-model="funcionario.cod_estado_civil" ng-options="estciv.idt_estado_civil as estciv.dsc_estado_civil for estciv in estadocivil" required id="linha2">
         <option value="">Estado Civil</option>
         </select>
