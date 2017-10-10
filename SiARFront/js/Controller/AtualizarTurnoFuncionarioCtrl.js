@@ -48,6 +48,7 @@ angular.module("SiAR").controller("AtualizarTurnoFuncionarioCtrl", function ($sc
          $scope.deletarTurno;
          funcionarioAPI.deleteFuncTurn(turnos_funcionario).success(function (data) {
              alert("Turno excluido com sucesso!");
+             $location.path("/listFuncionarios");
         });
     };
     $scope.turnos_funcionario = ToObject(turnos_funcionario.data);

@@ -37,12 +37,12 @@
             </div>
         </div>
         <div class="list-group">
-            <div ng-repeat="ponto in ponto_eletronico | filter:test">
+            <div ng-repeat="ponto in ponto_eletronico | filter: test">
                 <a href="#" class="list-group-item">
                     <h4><b>Funcionário:</b></h4>
-                    {{ponto.nme_funcionario}},
+                    {{ponto.nme_funcionario}}
                     <h4><b>Entrada:</b></h4>
-                    {{ponto.ponto_hr_entrada}},
+                    {{ponto.ponto_hr_entrada}}
                     <h4><b>Saída:</b></h4>
                     {{ponto.ponto_hr_saida}}
                 </a>
